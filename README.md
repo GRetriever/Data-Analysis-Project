@@ -5,5 +5,6 @@ This repository serves as a collection of my individual data analysis projects. 
 
 # Project List
 > EV_ChargingStations
+> 
 > Mushroom
 
