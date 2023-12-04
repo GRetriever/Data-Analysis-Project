@@ -30,8 +30,34 @@ The most representative locations are highway rest areas. Despite attracting a l
 2. Visualisation
 
 ## Results
+The number of registered cars has been steadily increasing, averaging an annual growth rate of 2.9% over the past 10 years. In contrast, the number of registered electric vehicles has surged more rapidly, experiencing an average growth rate of 101% per year.
+
+Electric vehicles account for 1.63% of the total number of registered cars(420905 out of 25870152) as of october 31,2023. The number of charging stations at highway rest areas is 1390, which is 0.5% of the total charging stations(1390 out of 265457). The questions arises: is 1390 enough? The answer still remains unclear. It is similar to determining how many toilets are needed in highway rest area, dependent on variables such as location, traffic flow, population. Quantifying the ideal number is quite challenging. Then attempting a simple calculation can help to address this matter.
+
+If we divide the total number of charging stations at highway rest areas (1390) by the number of rest areas (207), the result is approximately 6.7 charging stations per rest area. Assuming that the majority of traffic occurs between 7 am to 10 pm and that each charging station operates continuously, with an average charging time of 30 minutes, we can calculate the daily charging capacity as follows: 6.7 charging stations * 2 (charging sessions per hour) * 15 (hours of peak traffic) = 201 vehicles per day. Let's apply this calculation to the case of 칠곡휴게소.
+
+칠곡휴게소 had 16,447 vehicles visiting for the day on 24,August, 2023. Assuming that 1.6% of these vehicles are electric, approximately 263 electric vehicles visited that day. This exceeds the daily capacity of 201 vehicles. Using this simple calculation, it can be concluded that the current number of charging stations at highway rest areas is insufficient. And in reality, during peak hours, it is expected that the current number of charging stations would not be able to meet demand
+
+## Site Selection
+
+The site selection process is based on several factors such as traffic volume, the number of visitors. Firstly, I identified the top 5 routes with the highest traffic volume, and selected the rest area with the highest visitor counts for each routes. This approach presumably prevents the concentration on a single route or in a specific regions. 25 locations were selected in total.
+
+|경부선|영동선|중부선-대전통영선A|남해선A|서해안선|
+|---------|----------|----------|----------|---------|
+|입장거봉포도(서울)|여주(강릉)|하남드림|진영(순천)|화성(목포)|
+|안성(부산)|용인(강릉)|이천(하남)|함안(순천)|행담도|
+|천안삼거리(서울)|횡성(강릉)|마장|문산(순천)|화성(서울)|
+|안성(서울)|여주(인천)|오창(남이)|섬진강(부산)|서산(목포)|
+|죽전(서울)|용인(인천)|오창(하남)|섬진강(순천)|고창고인돌(목포)|
 
 ## Limitations
+
+1. Challenge to pinpoint perpect locations
+It was difficult in selecting ideal locations as not all factors were adequately considered. Areas with high traffic volume but lack of rest areas or segments where traffic is large, but insufficient for the entire highway route, were not accounted for in the selection process.
+2. Installation Cost
+The installation of charging stations at rest areas costs a huge amount of expenses. While rest areas around big cities have fewer challenges in installation, those located in remote areas can easily face difficulties. The biggest issue is installing power infrastructure as charging electric vehicles demands a substantial amount of electricity.
+3. Maintenance Cost
+The maintenance requires significant expenses since breakdowns occur frequently. According to the survey conducted 11,Nov,2023, it is reported that approximately 84% of electric vehicle users have experienced charging failures, with 75% attributing to equipment malfunctions and breakdowns.
 
 ## Acknowledgements
 
