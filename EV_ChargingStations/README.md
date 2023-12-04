@@ -25,3 +25,14 @@ The most representative locations are highway rest areas. Despite attracting a l
 |구간교통량(월별, 차종별)(2022년)|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=17&serviceType=&keyWord=&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=TR&GROUP_TR=TRAF_STAT&sId=17)|
 |휴게소이용객 및 교통량 현황|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=811&serviceType=&keyWord=%ED%9C%B4%EA%B2%8C%EC%86%8C&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=&GROUP_TR=&sId=811)|
 
+## Analysis Process
+1. Pre-Processing
+2. Visualisation
+
+## Results
+
+## Acknowledgements
+
+## Limitations
+
+## Contact Info
