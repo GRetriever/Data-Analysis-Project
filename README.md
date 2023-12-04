@@ -10,3 +10,4 @@ This repository serves as a compilation of my individual data analysis projects.
 # Tools and Languages
 - Python
 - Jupyter Notebook
+- Google Cloud Platform(Big Query)
