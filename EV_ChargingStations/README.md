@@ -67,6 +67,16 @@ I would like to express my sincere gratitude to
 
 for matplotlib/seaborn
 
+## References
+- [신차 67%를 전기차로... 美, 2032년까지 대전환](https://www.chosun.com/international/2023/04/12/LVSWS62CORBNRBLZJY4AGX7UZM/)
+- ["현대차, 전기차 목표치 상향…시장 선점 키는 투자확대·원가절감"](https://www.hankyung.com/article/2023062130576)
+- [고속도로 전기차 충전소는 왜 아직도 부족할까요](https://www.edaily.co.kr/news/read?newsId=01108646635637456&mediaCodeNo=257&OutLnkChk=Y)
+- [충전기 고장 분통 터지네…전기차 이용자 84% “충전 실패 경험 有”](https://www.sedaily.com/NewsView/29X6Z5B1L1)
+- [“전기차 45만대인데 고속도로 휴게소 충전소는 1천여 개 뿐”](https://www.yna.co.kr/view/AKR20230924040000001?input=1195m)
+- [“전기차 날로 느는데… 고속도로 휴게소 충전기는 1천여 개뿐](https://www.yonhapnewstv.co.kr/news/MYH20230930003400641?input=1825m)
+- [“전기차 타고 고향 가다 설라… 휴게소 충전소 1015개뿐](https://www.womaneconomy.co.kr/news/articleView.html?idxno=218875)
+- [“전기차 5배 증가했는데… 고속도로 충전시설 1015개 불과”](https://www.ekn.kr/web/view.php?key=20230928010008110)
+- [지역 맞춤 전기차 충전기 설치 사업 시동…1만5665기에 1283억 지원](https://www.etoday.co.kr/news/view/2238990)
 
 ## Contact Info
 > Email : xzv2221@naver.com
