@@ -9,7 +9,7 @@ The primary issue lies in the availability of electric vehicle charging stations
 <br/>
 
 The most representative locations are highway rest areas. Despite attracting a large number of people, rest areas inherently have a limited number of charging stations due to their geographical limitations. This limitation fails to adequately meet the current demand for charging electric vehicles. Also considering the increasing pace of electric vehicle adoption, the demand for fast-charging infrastructure is expected to grow further in the future. Therefore, this project aims to examine the current state of electric vehicle charging stations at highway rest areas and explore data-driven approaches to identify the most suitable locations for future installations.
-<br/>
+<br/><br/>
 
 ## Dependencies
 - Windows 10
