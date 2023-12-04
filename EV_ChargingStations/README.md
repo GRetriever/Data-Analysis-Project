@@ -62,5 +62,10 @@ The installation of charging stations at rest areas costs a huge amount of expen
 The maintenance requires significant expenses since breakdowns occur frequently. According to the survey conducted 11,Nov,2023, it is reported that approximately 84% of electric vehicle users have experienced charging failures, with 75% attributing to equipment malfunctions and breakdowns.
 
 ## Acknowledgements
+I would like to express my sincere gratitude to
+- [김형준](https://github.com/yeomko22), coach of Multicampus
+for matplotlib/seaborn
+
 
 ## Contact Info
+> Email : xzv2221@naver.com
