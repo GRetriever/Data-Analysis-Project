@@ -1,18 +1,22 @@
 # Analysis of Highway Electric Vehicle Charging Stations and Site Selection
-<br/><br/><br/>
+<br/><br/>
 
 ## Background and Significance
 In recent times, the number of electric vehicles has surged rapidly, and this is largely attributed to government subsidies. However, concerns have been raised regarding the rapid growth of electric vehicles in the absence of sufficient infrastructure, leading to a variety of issues
+<br/>
 
 The primary issue lies in the availability of electric vehicle charging stations. Charging electric vehicles requires a significant amount of time, even with the recent advancements in high-speed battery chargers. Despite these improvements, the charging speed remains notably slower compared to refueling a traditional gasoline vehicle. Moreover, the limited number of charging stations brings inconvenience for electric vehicle owners, especially in densely populated areas with the limited number of charging infrastructures
+<br/>
 
 The most representative locations are highway rest areas. Despite attracting a large number of people, rest areas inherently have a limited number of charging stations due to their geographical limitations. This limitation fails to adequately meet the current demand for charging electric vehicles. Also considering the increasing pace of electric vehicle adoption, the demand for fast-charging infrastructure is expected to grow further in the future. Therefore, this project aims to examine the current state of electric vehicle charging stations at highway rest areas and explore data-driven approaches to identify the most suitable locations for future installations.
+<br/>
 
 ## Dependencies
 - Windows 10
 - Jupyter Notebook
 - Python
 - Google Cloud Platform(BigQuery, Cloud Storage)
+<br/>
 
 ## Data Sources
 
@@ -25,10 +29,12 @@ The most representative locations are highway rest areas. Despite attracting a l
 |구간단면 양방향 교통량|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/fdwn/view?type=TCS&num=67&requestfrom=dataset)|
 |구간교통량(월별, 차종별)(2022년)|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=17&serviceType=&keyWord=&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=TR&GROUP_TR=TRAF_STAT&sId=17)|
 |휴게소이용객 및 교통량 현황|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=811&serviceType=&keyWord=%ED%9C%B4%EA%B2%8C%EC%86%8C&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=&GROUP_TR=&sId=811)|
+<br/>
 
 ## Analysis Process
 1. Pre-Processing
 2. Visualisation
+<br/>
 
 ## Results
 The number of registered cars has been steadily increasing, averaging an annual growth rate of 2.9% over the past 10 years. In contrast, the number of registered electric vehicles has surged more rapidly, experiencing an average growth rate of 101% per year.
@@ -38,6 +44,7 @@ Electric vehicles account for 1.63% of the total number of registered cars(42090
 If we divide the total number of charging stations at highway rest areas (1390) by the number of rest areas (207), the result is approximately 6.7 charging stations per rest area. Assuming that the majority of traffic occurs between 7 am to 10 pm and that each charging station operates continuously, with an average charging time of 30 minutes, we can calculate the daily charging capacity as follows: 6.7 charging stations * 2 (charging sessions per hour) * 15 (hours of peak traffic) = 201 vehicles per day. Let's apply this calculation to the case of 칠곡휴게소.
 
 칠곡휴게소 had 16,447 vehicles visiting for the day on 24,August, 2023. Assuming that 1.6% of these vehicles are electric, approximately 263 electric vehicles visited that day. This exceeds the daily capacity of 201 vehicles. Using this simple calculation, it can be concluded that the current number of charging stations at highway rest areas is insufficient. And in reality, during peak hours, it is expected that the current number of charging stations would not be able to meet demand
+<br/>
 
 ## Site Selection
 
@@ -50,6 +57,7 @@ The site selection process is based on several factors such as traffic volume, t
 |천안삼거리(서울)|횡성(강릉)|마장|문산(순천)|화성(서울)|
 |안성(서울)|여주(인천)|오창(남이)|섬진강(부산)|서산(목포)|
 |죽전(서울)|용인(인천)|오창(하남)|섬진강(순천)|고창고인돌(목포)|
+<br/>
 
 ## Limitations
 
@@ -61,12 +69,14 @@ The installation of charging stations at rest areas costs a huge amount of expen
 
 ##### 3. Maintenance Cost
 The maintenance requires significant expenses since breakdowns occur frequently. According to the survey conducted 11,Nov,2023, it is reported that approximately 84% of electric vehicle users have experienced charging failures, with 75% attributing to equipment malfunctions and breakdowns.
+<br/>
 
 ## Acknowledgements
 I would like to express my sincere gratitude to
 - [김형준](https://github.com/yeomko22), coach of Multicampus
 
 for matplotlib/seaborn
+<br/>
 
 ## References
 - [신차 67%를 전기차로... 美, 2032년까지 대전환](https://www.chosun.com/international/2023/04/12/LVSWS62CORBNRBLZJY4AGX7UZM/)
@@ -78,6 +88,7 @@ for matplotlib/seaborn
 - [“전기차 타고 고향 가다 설라… 휴게소 충전소 1015개뿐](https://www.womaneconomy.co.kr/news/articleView.html?idxno=218875)
 - [“전기차 5배 증가했는데… 고속도로 충전시설 1015개 불과”](https://www.ekn.kr/web/view.php?key=20230928010008110)
 - [지역 맞춤 전기차 충전기 설치 사업 시동…1만5665기에 1283억 지원](https://www.etoday.co.kr/news/view/2238990)
+<br/>
 
 ## Contact Info
 > Email : xzv2221@naver.com
