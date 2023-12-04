@@ -15,3 +15,11 @@ The most representative locations are highway rest areas. Despite attracting a l
 
 ## Data Sources
 
+|이름|사이트명|
+|자동차 등록 현황 보고|[국토교통 통계누리](https://stat.molit.go.kr/portal/cate/statFileView.do?hRsId=58&hFormId=1244&hSelectId=1244&sStyleNum=562&sStart=2021&sEnd=2021&hPoint=00&hAppr=1)|
+|전기차 등록 현황|[차지 인포](https://chargeinfo.ksga.org/front/statistics/evCar)|
+|충전소 리스트|[무공해차 통합누리집](https://ev.or.kr/nportal/monitor/evMap.do)|
+|전기차 충전소 충전량|[공공데이터포털](https://www.data.go.kr/data/15102510/fileData.do)|
+|구간단면 양방향 교통량|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/fdwn/view?type=TCS&num=67&requestfrom=dataset)|
+|구간교통량(월별, 차종별)(2022년)|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=17&serviceType=&keyWord=&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=TR&GROUP_TR=TRAF_STAT&sId=17)|
+|휴게소이용객 및 교통량 현황|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=811&serviceType=&keyWord=%ED%9C%B4%EA%B2%8C%EC%86%8C&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=&GROUP_TR=&sId=811)|
