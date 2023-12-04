@@ -52,11 +52,13 @@ The site selection process is based on several factors such as traffic volume, t
 
 ## Limitations
 
-1. Challenge to pinpoint perpect locations
+##### 1. Challenge to pinpoint perpect locations
 It was difficult in selecting ideal locations as not all factors were adequately considered. Areas with high traffic volume but lack of rest areas or segments where traffic is large, but insufficient for the entire highway route, were not accounted for in the selection process.
-2. Installation Cost
+
+##### 2. Installation Cost
 The installation of charging stations at rest areas costs a huge amount of expenses. While rest areas around big cities have fewer challenges in installation, those located in remote areas can easily face difficulties. The biggest issue is installing power infrastructure as charging electric vehicles demands a substantial amount of electricity.
-3. Maintenance Cost
+
+##### 3. Maintenance Cost
 The maintenance requires significant expenses since breakdowns occur frequently. According to the survey conducted 11,Nov,2023, it is reported that approximately 84% of electric vehicle users have experienced charging failures, with 75% attributing to equipment malfunctions and breakdowns.
 
 ## Acknowledgements
