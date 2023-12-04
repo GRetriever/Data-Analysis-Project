@@ -4,7 +4,7 @@ This repository serves as a compilation of my individual data analysis projects.
 
 
 # Project List
-1. EV_ChargingStations
+1. [EV_ChargingStations]<EV_ChargingStations>
 2. Mushroom
 
 # Tools and Languages
