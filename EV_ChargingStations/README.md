@@ -102,7 +102,8 @@ The most representative locations are highway rest areas. Despite attracting a l
 !https://velog.velcdn.com/images/xzv2221/post/89a7bb88-546c-4b84-ac77-30dcf0a5551f/image.png
 
  This represents the top 15 rest areas with the highest daily visitor numbers as of 24 Aug 2023.
-<br/><br/>
+<br/><br/><br/>
+
 
 ## Results
 The number of registered cars has been steadily increasing, averaging an annual growth rate of 2.9% over the past 10 years. In contrast, the number of registered electric vehicles has surged more rapidly, experiencing an average growth rate of 101% per year.
@@ -112,7 +113,8 @@ Electric vehicles account for 1.63% of the total number of registered cars(42090
 If we divide the total number of charging stations at highway rest areas (1390) by the number of rest areas (207), the result is approximately 6.7 charging stations per rest area. Assuming that the majority of traffic occurs between 7 am to 10 pm and that each charging station operates continuously, with an average charging time of 30 minutes, we can calculate the daily charging capacity as follows: 6.7 charging stations * 2 (charging sessions per hour) * 15 (hours of peak traffic) = 201 vehicles per day. Let's apply this calculation to the case of 칠곡휴게소.
 
 칠곡휴게소 had 16,447 vehicles visiting for the day on 24,August, 2023. Assuming that 1.6% of these vehicles are electric, approximately 263 electric vehicles visited that day. This exceeds the daily capacity of 201 vehicles. Using this simple calculation, it can be concluded that the current number of charging stations at highway rest areas is insufficient. And in reality, during peak hours, it is expected that the current number of charging stations would not be able to meet demand
-<br/>
+<br/><br/>
+
 
 ## Site Selection
 
@@ -125,7 +127,8 @@ The site selection process is based on several factors such as traffic volume, t
 |천안삼거리(서울)|횡성(강릉)|마장|문산(순천)|화성(서울)|
 |안성(서울)|여주(인천)|오창(남이)|섬진강(부산)|서산(목포)|
 |죽전(서울)|용인(인천)|오창(하남)|섬진강(순천)|고창고인돌(목포)|
-<br/>
+<br/><br/>
+
 
 ## Limitations
 
@@ -144,7 +147,8 @@ I would like to express my sincere gratitude to
 - [김형준](https://github.com/yeomko22), coach of Multicampus
 
 for matplotlib/seaborn
-<br/>
+<br/><br/>
+
 
 ## References
 - [신차 67%를 전기차로... 美, 2032년까지 대전환](https://www.chosun.com/international/2023/04/12/LVSWS62CORBNRBLZJY4AGX7UZM/)
@@ -156,7 +160,8 @@ for matplotlib/seaborn
 - [“전기차 타고 고향 가다 설라… 휴게소 충전소 1015개뿐](https://www.womaneconomy.co.kr/news/articleView.html?idxno=218875)
 - [“전기차 5배 증가했는데… 고속도로 충전시설 1015개 불과”](https://www.ekn.kr/web/view.php?key=20230928010008110)
 - [지역 맞춤 전기차 충전기 설치 사업 시동…1만5665기에 1283억 지원](https://www.etoday.co.kr/news/view/2238990)
-<br/>
+<br/><br/>
+
 
 ## Contact Info
 > Email : xzv2221@naver.com
