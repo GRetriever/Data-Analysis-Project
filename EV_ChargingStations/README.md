@@ -80,21 +80,21 @@ The most representative locations are highway rest areas. Despite attracting a l
 
  The X-axis of the graph stans for charging capacity (kW), and the Y-axis for the number of vehicles. The majority are below 40kW.
 
-![7](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/743f342d-527e-4bc6-a1ac-062e691a5a1f)
+![7](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/9b1e702b-0997-45d0-be69-7f44ba37f414)
 
  The X-axis represents charging time, and the Y-axis represents the number of vehicles. The height of the bars is highest around 30 minutes, with the 1-hour bar standing out.
 <br/>
 
 ### 5. Top 15 Highway Traffic Volume
 
-![8](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/3c9e1ee3-a686-46c4-8c81-a72682986b87)
+![8](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/b98109b9-ac32-4fcf-a142-3540cf56f07a)
 
  The graph depicts the top 15 daily average highway traffic volumes as of 12 Nov 2023. The highest is 5,789,176, followed by 3,237,706 and 2,575,357.
 <br/>
 
 ### 6. Top 15 Highway Segment Traffic Volume
 
-![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/e6f53c80-240a-4399-a8e6-e3da2f0d03fa)
+![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/cff5da37-4dc6-4874-9686-a74a8d985fcf)
 
  It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
 <br/>
