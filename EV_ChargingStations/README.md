@@ -81,18 +81,21 @@ The most representative locations are highway rest areas. Despite attracting a l
 !https://velog.velcdn.com/images/xzv2221/post/ef1f4b0e-ab0f-4c8b-922b-0286a4b7ff30/image.png
 
  The X-axis represents charging time, and the Y-axis represents the number of vehicles. The height of the bars is highest around 30 minutes, with the 1-hour bar standing out.
+<br/>
 
 ### 5. Top 15 Highway Traffic Volume
 
 !https://velog.velcdn.com/images/xzv2221/post/cf589799-1a90-4232-b91b-da2fb8b898a0/image.png
 
  The graph depicts the top 15 daily average highway traffic volumes as of 12 Nov 2023. The highest is 5,789,176, followed by 3,237,706 and 2,575,357.
+<br/>
 
 ### 6. Top 15 Highway Segment Traffic Volume
 
 !https://velog.velcdn.com/images/xzv2221/post/bf1527ca-8095-4840-a07a-8f9cb707bde9/image.png
 
  It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
+<br/>
 
 ### 7. Top 15 Rest Area Visitors
 
