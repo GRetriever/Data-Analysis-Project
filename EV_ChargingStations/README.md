@@ -102,7 +102,8 @@ The most representative locations are highway rest areas. Despite attracting a l
 !https://velog.velcdn.com/images/xzv2221/post/89a7bb88-546c-4b84-ac77-30dcf0a5551f/image.png
 
  This represents the top 15 rest areas with the highest daily visitor numbers as of 24 Aug 2023.
-<br/><br/><br/>
+
+<br/><br/>
 
 
 ## Results
@@ -129,7 +130,7 @@ The site selection process is based on several factors such as traffic volume, t
 |죽전(서울)|용인(인천)|오창(하남)|섬진강(순천)|고창고인돌(목포)|
 <br/>
 
-<br/><br/>
+<br/>
 
 ## Limitations
 
@@ -141,7 +142,8 @@ The installation of charging stations at rest areas costs a huge amount of expen
 
 ##### 3. Maintenance Cost
 The maintenance requires significant expenses since breakdowns occur frequently. According to the survey conducted 11,Nov,2023, it is reported that approximately 84% of electric vehicle users have experienced charging failures, with 75% attributing to equipment malfunctions and breakdowns.
-<br/>
+
+<br/><br/>
 
 ## Acknowledgements
 I would like to express my sincere gratitude to
@@ -149,7 +151,7 @@ I would like to express my sincere gratitude to
 
 for matplotlib/seaborn
 
-<br/><br/><br/>
+<br/><br/>
 
 
 ## References
