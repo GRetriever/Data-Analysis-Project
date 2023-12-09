@@ -33,8 +33,67 @@ The most representative locations are highway rest areas. Despite attracting a l
 <br/>
 
 ## Analysis Process
-1. Pre-Processing
-2. Visualisation
+## Analysis Process
+
+### 1. The Number of Registered Vehicles
+
+!https://velog.velcdn.com/images/xzv2221/post/8c5b05e1-40c3-4b51-8368-416a61eaf4fc/image.png
+
+ The graph above illustrates the increase in the number of registered vehicles over the past 10 years. The total number is 25,870,152 as of 31 Oct 2023.
+
+!https://velog.velcdn.com/images/xzv2221/post/bb20c7f8-e86e-4b2f-81a4-08e7e1d55359/image.png
+
+ This graph shows the annual growth rate of registered vehicles. The maximum growth rate is 4.03% in 2014-2015, while the minimum was recorded at 1.84% from 2022 to 2023. The average rate is 2.94%.
+
+### 2. The Number of Registered Electric Vehicles
+
+!https://velog.velcdn.com/images/xzv2221/post/b457f0cf-7036-49f0-aa21-b9c980da711a/image.png
+
+ The graph above illustrates the changes in the number of EV registrations over the last 10 years. The total number is 420,905 as of 31 Oct 2023.
+
+!https://velog.velcdn.com/images/xzv2221/post/f08767e6-ce1d-45f3-a241-f5eead504a27/image.png
+
+ This graph represents the growth rate of EV registrations. The maximum growth rate occured at 259.76% in 2017-2018, while the minimum was 5.57% from 2012-2013. The average growth rate is 101.44%.
+
+### 3. The Number of Registered Charging Stations
+
+!https://velog.velcdn.com/images/xzv2221/post/619f665a-e05b-420d-a62a-b4585e2f0ab7/image.png
+
+ It shows the number of registered EV charging stations nationwide. As of 14 Nov 2023, the total number is 265,457, with 1,390 registered for highway use.
+
+### 4. Average Charging Capacity and Charging Time at Highway Rest Area
+
+| Number | Type | Charge | Time |
+| --- | --- | --- | --- |
+| 162768 | 급속 | 23.233272 | 29.968292 |
+
+ The table above represents the average charging amount and charging time of EV at highway charging stations registered with the Korea Electric Power Corporation in 2023.
+
+!https://velog.velcdn.com/images/xzv2221/post/d38619d7-7e20-4dd5-8c24-83600ddc49ea/image.png
+
+ The X-axis of the graph stans for charging capacity (kW), and the Y-axis for the number of vehicles. The majority are below 40kW.
+
+!https://velog.velcdn.com/images/xzv2221/post/ef1f4b0e-ab0f-4c8b-922b-0286a4b7ff30/image.png
+
+ The X-axis represents charging time, and the Y-axis represents the number of vehicles. The height of the bars is highest around 30 minutes, with the 1-hour bar standing out.
+
+### 5. Top 15 Highway Traffic Volume
+
+!https://velog.velcdn.com/images/xzv2221/post/cf589799-1a90-4232-b91b-da2fb8b898a0/image.png
+
+ The graph depicts the top 15 daily average highway traffic volumes as of 12 Nov 2023. The highest is 5,789,176, followed by 3,237,706 and 2,575,357.
+
+### 6. Top 15 Highway Segment Traffic Volume
+
+!https://velog.velcdn.com/images/xzv2221/post/bf1527ca-8095-4840-a07a-8f9cb707bde9/image.png
+
+ It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
+
+### 7. Top 15 Rest Area Visitors
+
+!https://velog.velcdn.com/images/xzv2221/post/89a7bb88-546c-4b84-ac77-30dcf0a5551f/image.png
+
+ This represents the top 15 rest areas with the highest daily visitor numbers as of 24 Aug 2023.
 <br/>
 
 ## Results
