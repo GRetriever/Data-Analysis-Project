@@ -33,7 +33,6 @@ The most representative locations are highway rest areas. Despite attracting a l
 <br/>
 
 ## Analysis Process
-## Analysis Process
 
 ### 1. The Number of Registered Vehicles
 
@@ -94,7 +93,7 @@ The most representative locations are highway rest areas. Despite attracting a l
 !https://velog.velcdn.com/images/xzv2221/post/89a7bb88-546c-4b84-ac77-30dcf0a5551f/image.png
 
  This represents the top 15 rest areas with the highest daily visitor numbers as of 24 Aug 2023.
-<br/>
+<br/><br/>
 
 ## Results
 The number of registered cars has been steadily increasing, averaging an annual growth rate of 2.9% over the past 10 years. In contrast, the number of registered electric vehicles has surged more rapidly, experiencing an average growth rate of 101% per year.
