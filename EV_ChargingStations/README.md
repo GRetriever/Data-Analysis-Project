@@ -47,7 +47,8 @@ The most representative locations are highway rest areas. Despite attracting a l
 
  This graph shows the annual growth rate of registered vehicles. The maximum growth rate is 4.03% in 2014-2015, while the minimum was recorded at 1.84% from 2022 to 2023. The average rate is 2.94%.
  <br/>
-
+ <br/>
+ 
 ### 2. The Number of Registered Electric Vehicles
 
 ![3](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/8ebee6a8-2676-47ea-ad21-bff6b0a0fe20)
