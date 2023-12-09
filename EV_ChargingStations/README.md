@@ -76,25 +76,25 @@ The most representative locations are highway rest areas. Despite attracting a l
 
  The table above represents the average charging amount and charging time of EV at highway charging stations registered with the Korea Electric Power Corporation in 2023.
 
-![6](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/df53d1b4-4fd7-440d-a993-2cbbaf100b60)
+![6](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/1ceb1809-ad6f-4b0e-a47e-58ad808efafa)
 
  The X-axis of the graph stans for charging capacity (kW), and the Y-axis for the number of vehicles. The majority are below 40kW.
 
-![7](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/b2630f40-0832-4d6b-a9af-5bd4e896e350)
+![7](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/743f342d-527e-4bc6-a1ac-062e691a5a1f)
 
  The X-axis represents charging time, and the Y-axis represents the number of vehicles. The height of the bars is highest around 30 minutes, with the 1-hour bar standing out.
 <br/>
 
 ### 5. Top 15 Highway Traffic Volume
 
-![8](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/094a7fa2-9b8a-4012-bd88-e5cb1d11e141)
+![8](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/3c9e1ee3-a686-46c4-8c81-a72682986b87)
 
  The graph depicts the top 15 daily average highway traffic volumes as of 12 Nov 2023. The highest is 5,789,176, followed by 3,237,706 and 2,575,357.
 <br/>
 
 ### 6. Top 15 Highway Segment Traffic Volume
 
- ![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/eb0092da-b6dc-48ee-b96a-07f6791cd5f4)
+![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/8d3d7a7e-1bed-4750-9020-499a32ecbafe)
 
  It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
 <br/>
