@@ -34,31 +34,37 @@ The most representative locations are highway rest areas. Despite attracting a l
 
 ## Analysis Process
 
+
 ### 1. The Number of Registered Vehicles
 
 !https://velog.velcdn.com/images/xzv2221/post/8c5b05e1-40c3-4b51-8368-416a61eaf4fc/image.png
 
  The graph above illustrates the increase in the number of registered vehicles over the past 10 years. The total number is 25,870,152 as of 31 Oct 2023.
+ 
 
 !https://velog.velcdn.com/images/xzv2221/post/bb20c7f8-e86e-4b2f-81a4-08e7e1d55359/image.png
 
  This graph shows the annual growth rate of registered vehicles. The maximum growth rate is 4.03% in 2014-2015, while the minimum was recorded at 1.84% from 2022 to 2023. The average rate is 2.94%.
+ <br/>
 
 ### 2. The Number of Registered Electric Vehicles
 
 !https://velog.velcdn.com/images/xzv2221/post/b457f0cf-7036-49f0-aa21-b9c980da711a/image.png
 
  The graph above illustrates the changes in the number of EV registrations over the last 10 years. The total number is 420,905 as of 31 Oct 2023.
+ 
 
 !https://velog.velcdn.com/images/xzv2221/post/f08767e6-ce1d-45f3-a241-f5eead504a27/image.png
 
  This graph represents the growth rate of EV registrations. The maximum growth rate occured at 259.76% in 2017-2018, while the minimum was 5.57% from 2012-2013. The average growth rate is 101.44%.
+ <br/>
 
 ### 3. The Number of Registered Charging Stations
 
 !https://velog.velcdn.com/images/xzv2221/post/619f665a-e05b-420d-a62a-b4585e2f0ab7/image.png
 
  It shows the number of registered EV charging stations nationwide. As of 14 Nov 2023, the total number is 265,457, with 1,390 registered for highway use.
+ <br/>
 
 ### 4. Average Charging Capacity and Charging Time at Highway Rest Area
 
