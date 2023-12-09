@@ -32,7 +32,7 @@ The most representative locations are highway rest areas. Despite attracting a l
 |휴게소이용객 및 교통량 현황|[한국도로공사 고속도로 공공데이터 포털](https://data.ex.co.kr/portal/docu/docuList?datasetId=811&serviceType=&keyWord=%ED%9C%B4%EA%B2%8C%EC%86%8C&searchDayFrom=2014.12.01&searchDayTo=2023.11.14&CATEGORY=&GROUP_TR=&sId=811)|
 <br/>
 
-## Analysis Process
+## Analysis
 
 
 ### 1. The Number of Registered Vehicles
@@ -76,25 +76,25 @@ The most representative locations are highway rest areas. Despite attracting a l
 
  The table above represents the average charging amount and charging time of EV at highway charging stations registered with the Korea Electric Power Corporation in 2023.
 
-![6](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/1ceb1809-ad6f-4b0e-a47e-58ad808efafa)
+![6](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/ecc6238d-cd3b-4e70-86f8-2de4272a8d79)
 
  The X-axis of the graph stans for charging capacity (kW), and the Y-axis for the number of vehicles. The majority are below 40kW.
 
-![7](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/743f342d-527e-4bc6-a1ac-062e691a5a1f)
+![7](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/9b1e702b-0997-45d0-be69-7f44ba37f414)
 
  The X-axis represents charging time, and the Y-axis represents the number of vehicles. The height of the bars is highest around 30 minutes, with the 1-hour bar standing out.
 <br/>
 
 ### 5. Top 15 Highway Traffic Volume
 
-![8](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/3c9e1ee3-a686-46c4-8c81-a72682986b87)
+![8](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/b98109b9-ac32-4fcf-a142-3540cf56f07a)
 
  The graph depicts the top 15 daily average highway traffic volumes as of 12 Nov 2023. The highest is 5,789,176, followed by 3,237,706 and 2,575,357.
 <br/>
 
 ### 6. Top 15 Highway Segment Traffic Volume
 
-![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/8d3d7a7e-1bed-4750-9020-499a32ecbafe)
+![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/cff5da37-4dc6-4874-9686-a74a8d985fcf)
 
  It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
 <br/>
