@@ -94,7 +94,7 @@ The most representative locations are highway rest areas. Despite attracting a l
 
 ### 6. Top 15 Highway Segment Traffic Volume
 
-![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/8d3d7a7e-1bed-4750-9020-499a32ecbafe)
+![9](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/e6f53c80-240a-4399-a8e6-e3da2f0d03fa)
 
  It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
 <br/>
