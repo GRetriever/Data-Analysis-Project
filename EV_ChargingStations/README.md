@@ -33,9 +33,78 @@ The most representative locations are highway rest areas. Despite attracting a l
 <br/>
 
 ## Analysis Process
-1. Pre-Processing
-2. Visualisation
+
+
+### 1. The Number of Registered Vehicles
+
+!https://velog.velcdn.com/images/xzv2221/post/8c5b05e1-40c3-4b51-8368-416a61eaf4fc/image.png
+
+ The graph above illustrates the increase in the number of registered vehicles over the past 10 years. The total number is 25,870,152 as of 31 Oct 2023.
+ 
+
+!https://velog.velcdn.com/images/xzv2221/post/bb20c7f8-e86e-4b2f-81a4-08e7e1d55359/image.png
+
+ This graph shows the annual growth rate of registered vehicles. The maximum growth rate is 4.03% in 2014-2015, while the minimum was recorded at 1.84% from 2022 to 2023. The average rate is 2.94%.
+ <br/>
+
+### 2. The Number of Registered Electric Vehicles
+
+!https://velog.velcdn.com/images/xzv2221/post/b457f0cf-7036-49f0-aa21-b9c980da711a/image.png
+
+ The graph above illustrates the changes in the number of EV registrations over the last 10 years. The total number is 420,905 as of 31 Oct 2023.
+ 
+
+!https://velog.velcdn.com/images/xzv2221/post/f08767e6-ce1d-45f3-a241-f5eead504a27/image.png
+
+ This graph represents the growth rate of EV registrations. The maximum growth rate occured at 259.76% in 2017-2018, while the minimum was 5.57% from 2012-2013. The average growth rate is 101.44%.
+ <br/>
+
+### 3. The Number of Registered Charging Stations
+
+!https://velog.velcdn.com/images/xzv2221/post/619f665a-e05b-420d-a62a-b4585e2f0ab7/image.png
+
+ It shows the number of registered EV charging stations nationwide. As of 14 Nov 2023, the total number is 265,457, with 1,390 registered for highway use.
+ <br/>
+
+### 4. Average Charging Capacity and Charging Time at Highway Rest Area
+
+| Number | Type | Charge | Time |
+| --- | --- | --- | --- |
+| 162768 | 급속 | 23.233272 | 29.968292 |
+
+ The table above represents the average charging amount and charging time of EV at highway charging stations registered with the Korea Electric Power Corporation in 2023.
+
+!https://velog.velcdn.com/images/xzv2221/post/d38619d7-7e20-4dd5-8c24-83600ddc49ea/image.png
+
+ The X-axis of the graph stans for charging capacity (kW), and the Y-axis for the number of vehicles. The majority are below 40kW.
+
+!https://velog.velcdn.com/images/xzv2221/post/ef1f4b0e-ab0f-4c8b-922b-0286a4b7ff30/image.png
+
+ The X-axis represents charging time, and the Y-axis represents the number of vehicles. The height of the bars is highest around 30 minutes, with the 1-hour bar standing out.
 <br/>
+
+### 5. Top 15 Highway Traffic Volume
+
+!https://velog.velcdn.com/images/xzv2221/post/cf589799-1a90-4232-b91b-da2fb8b898a0/image.png
+
+ The graph depicts the top 15 daily average highway traffic volumes as of 12 Nov 2023. The highest is 5,789,176, followed by 3,237,706 and 2,575,357.
+<br/>
+
+### 6. Top 15 Highway Segment Traffic Volume
+
+!https://velog.velcdn.com/images/xzv2221/post/bf1527ca-8095-4840-a07a-8f9cb707bde9/image.png
+
+ It shows the top 15 daily average traffic volumes by highway segment in 2022. The highest traffic volume records 230,936 for a day.
+<br/>
+
+### 7. Top 15 Rest Area Visitors
+
+!https://velog.velcdn.com/images/xzv2221/post/89a7bb88-546c-4b84-ac77-30dcf0a5551f/image.png
+
+ This represents the top 15 rest areas with the highest daily visitor numbers as of 24 Aug 2023.
+
+<br/><br/>
+
 
 ## Results
 The number of registered cars has been steadily increasing, averaging an annual growth rate of 2.9% over the past 10 years. In contrast, the number of registered electric vehicles has surged more rapidly, experiencing an average growth rate of 101% per year.
@@ -45,6 +114,7 @@ Electric vehicles account for 1.63% of the total number of registered cars(42090
 If we divide the total number of charging stations at highway rest areas (1390) by the number of rest areas (207), the result is approximately 6.7 charging stations per rest area. Assuming that the majority of traffic occurs between 7 am to 10 pm and that each charging station operates continuously, with an average charging time of 30 minutes, we can calculate the daily charging capacity as follows: 6.7 charging stations * 2 (charging sessions per hour) * 15 (hours of peak traffic) = 201 vehicles per day. Let's apply this calculation to the case of 칠곡휴게소.
 
 칠곡휴게소 had 16,447 vehicles visiting for the day on 24,August, 2023. Assuming that 1.6% of these vehicles are electric, approximately 263 electric vehicles visited that day. This exceeds the daily capacity of 201 vehicles. Using this simple calculation, it can be concluded that the current number of charging stations at highway rest areas is insufficient. And in reality, during peak hours, it is expected that the current number of charging stations would not be able to meet demand
+<br/><br/>
 <br/>
 
 ## Site Selection
@@ -59,6 +129,7 @@ The site selection process is based on several factors such as traffic volume, t
 |안성(서울)|여주(인천)|오창(남이)|섬진강(부산)|서산(목포)|
 |죽전(서울)|용인(인천)|오창(하남)|섬진강(순천)|고창고인돌(목포)|
 <br/>
+<br/>
 
 ## Limitations
 
@@ -70,14 +141,17 @@ The installation of charging stations at rest areas costs a huge amount of expen
 
 ##### 3. Maintenance Cost
 The maintenance requires significant expenses since breakdowns occur frequently. According to the survey conducted 11,Nov,2023, it is reported that approximately 84% of electric vehicle users have experienced charging failures, with 75% attributing to equipment malfunctions and breakdowns.
-<br/>
+
+<br/><br/>
 
 ## Acknowledgements
 I would like to express my sincere gratitude to
 - [김형준](https://github.com/yeomko22), coach of Multicampus
 
 for matplotlib/seaborn
-<br/>
+
+<br/><br/>
+
 
 ## References
 - [신차 67%를 전기차로... 美, 2032년까지 대전환](https://www.chosun.com/international/2023/04/12/LVSWS62CORBNRBLZJY4AGX7UZM/)
@@ -89,7 +163,8 @@ for matplotlib/seaborn
 - [“전기차 타고 고향 가다 설라… 휴게소 충전소 1015개뿐](https://www.womaneconomy.co.kr/news/articleView.html?idxno=218875)
 - [“전기차 5배 증가했는데… 고속도로 충전시설 1015개 불과”](https://www.ekn.kr/web/view.php?key=20230928010008110)
 - [지역 맞춤 전기차 충전기 설치 사업 시동…1만5665기에 1283억 지원](https://www.etoday.co.kr/news/view/2238990)
-<br/>
+<br/><br/>
+
 
 ## Contact Info
 > Email : xzv2221@naver.com
