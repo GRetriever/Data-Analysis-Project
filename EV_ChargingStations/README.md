@@ -115,7 +115,7 @@ If we divide the total number of charging stations at highway rest areas (1390) 
 
 칠곡휴게소 had 16,447 vehicles visiting for the day on 24,August, 2023. Assuming that 1.6% of these vehicles are electric, approximately 263 electric vehicles visited that day. This exceeds the daily capacity of 201 vehicles. Using this simple calculation, it can be concluded that the current number of charging stations at highway rest areas is insufficient. And in reality, during peak hours, it is expected that the current number of charging stations would not be able to meet demand
 <br/><br/>
-
+<br/>
 
 ## Site Selection
 
