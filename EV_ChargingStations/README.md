@@ -76,7 +76,7 @@ The most representative locations are highway rest areas. Despite attracting a l
 
  The table above represents the average charging amount and charging time of EV at highway charging stations registered with the Korea Electric Power Corporation in 2023.
 
-![6](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/1ceb1809-ad6f-4b0e-a47e-58ad808efafa)
+![6](https://github.com/GRetriever/Data-Analysis-Project/assets/148840826/ecc6238d-cd3b-4e70-86f8-2de4272a8d79)
 
  The X-axis of the graph stans for charging capacity (kW), and the Y-axis for the number of vehicles. The majority are below 40kW.
 
