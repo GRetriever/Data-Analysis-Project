@@ -88,18 +88,15 @@ df = pd.read_csv(r'C:\Users\bluek\OneDrive\Desktop\mulcam\NetflixOriginals.csv',
 
 ### 1. Columns and Data
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d23f16c3-8dd8-41b3-b4b8-267a5f78a9f0/66fafdad-1b2b-4ab4-a615-56aaae9d9121/Untitled.png)
+![](https://velog.velcdn.com/images/xzv2221/post/6b486bf9-8299-49ea-a48c-6a2b662e6a23/image.png)
 
 The dataset consists of 6 columns and 584 data
 
-### 2. Column 및 Data
-
+### 2. Null Data
 ```python
 df.shape
 ```
-![](https://velog.velcdn.com/images/xzv2221/post/6b486bf9-8299-49ea-a48c-6a2b662e6a23/image.png)
-
- 6개 column, 584개 데이터
+![](https://velog.velcdn.com/images/xzv2221/post/1ad57f28-1902-4e16-afc6-7dda9ea1dc62/image.png
 
 </br>
 
@@ -108,7 +105,7 @@ df.shape
 ```python
 df.isnull().sum()
 ```
-![](https://velog.velcdn.com/images/xzv2221/post/1ad57f28-1902-4e16-afc6-7dda9ea1dc62/image.png)
+![](https://velog.velcdn.com/images/xzv2221/post/c1f66179-630e-4edc-bd8f-eb9925a644c3/image.png)
 
 </br>
 
@@ -118,7 +115,7 @@ df.isnull().sum()
 df.nunique()
 ```
 
-![](https://velog.velcdn.com/images/xzv2221/post/c1f66179-630e-4edc-bd8f-eb9925a644c3/image.png)
+
 
  장르 115 가지, 언어 38가지
 
