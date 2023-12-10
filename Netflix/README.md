@@ -1,12 +1,12 @@
 # Neflix Original Films Suggestion Based on IMDB Score
-<br/><br/>
+<br/>
 
 ## 🎯Goal
 This project aims to conduct a statistical analysis on Netflix Original Films data using IMDB scores and provide recommendations for future production.
 <br/>
 [Netflix 데이터 바로가기](https://www.kaggle.com/datasets/luiscorter/netflix-original-films-imdb-scores/data)
 
-</br></br>
+</br>
 
 ## Overview
 </br>
@@ -42,7 +42,7 @@ he dataset comprises 6 columns and 584 rows of data.
 
 ### 2. Column
 
-|컬럼명|내용|
+|Column Name|Info|
 |-----|-----|
 |Title|필름 제목|
 |Genre|필름 장르|
@@ -74,8 +74,6 @@ he dataset comprises 6 columns and 584 rows of data.
 
 </br>
 
-### 1. Columns and Data
-
 ```python
 import numpy as np
 import pandas as pd
@@ -87,6 +85,12 @@ df = pd.read_csv(r'C:\Users\bluek\OneDrive\Desktop\mulcam\NetflixOriginals.csv',
 ```
 
 </br>
+
+### 1. Columns and Data
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/d23f16c3-8dd8-41b3-b4b8-267a5f78a9f0/66fafdad-1b2b-4ab4-a615-56aaae9d9121/Untitled.png)
+
+The dataset consists of 6 columns and 584 data
 
 ### 2. Column 및 Data
 
