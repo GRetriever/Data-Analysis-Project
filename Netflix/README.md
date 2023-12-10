@@ -10,12 +10,15 @@ This project aims to conduct a statistical analysis on Netflix Original Films da
 
 ## Overview
 </br>
+
 ### 1. EDA (Exploratory Data Anaylsis)
 Analyse the means and differences
 </br>
+
 ### 2. Recommendations Based on Statistical Hypothesis Test
 Optimized production recommendations based on genre, premiere, runtime, and language
 </br>
+
 ### 3. Insights & Limitations
 
 </br>
