@@ -1,7 +1,7 @@
 # Neflix Original Films Suggestion Based on IMDB Score
 <br/><br/>
 
-##🎯Goal
+## 🎯Goal
 This project aims to conduct a statistical analysis on Netflix Original Films data using IMDB scores and provide recommendations for future production.
 <br/>
 [Netflix 데이터 바로가기](https://www.kaggle.com/datasets/luiscorter/netflix-original-films-imdb-scores/data)
@@ -11,28 +11,29 @@ This project aims to conduct a statistical analysis on Netflix Original Films da
 ## Overview
 </br>
 ### 1. EDA (Exploratory Data Anaylsis)
-Column 내 집단간 평균, 차이 분석
+Analyse the means and differences
+</br>
+### 2. Recommendations Based on Statistical Hypothesis Test
+Optimized production recommendations based on genre, premiere, runtime, and language
+</br>
+### 3. Insights & Limitations
 
 </br>
 
-### 2. 데이터 분석, 통계적 검정을 통한 선정
-장르 → 개봉 시기 → 상영시간 → 언어순으로 집단을 세분화 하여 최적화된 제작 방안 제언
-
-</br>
-
-### 3. Insight & 한계점
-
-</br></br>
+## Dependencies
+- Windows 10
+- Jupyter Notebook
+- Python
+<br/>
 
 ## Dataset
-
 </br>
 
 ### 1. Dataset
 
 ![](https://velog.velcdn.com/images/xzv2221/post/20e396cb-24b9-419c-a3e4-31c886089456/image.png)
 
-Netflix Orignial Film에 관한 정보를 담고있으며 6개 column,  584개 데이터로 이루어져있다.
+he dataset comprises 6 columns and 584 rows of data.
 
 </br>
 
@@ -49,20 +50,14 @@ Netflix Orignial Film에 관한 정보를 담고있으며 6개 column,  584개 �
 
 </br>
 
-### 3. 배경지식
+### 3. Background Knowledge
 [IMDb (Internet Movie Database)](https://www.imdb.com/)
 
-- 미국 영화 정보 사이트로 아마존 닷컴 자회사로 세계 최대 영화 사이트
+- American movie information site, recognized as the world's largest movie website
 
-- 평점은 유저들의 평점으로 비평가들에 비해 대중적 취향이 많이 반영됨
+- Reflects popular preference
 
-- 투표 인원이 많아 신뢰도가 높으며 각종 분석, 예측에 활용되고있음
-
-- Top250의 커트라인: 8.2
-
-- Rating 7: 일반 관람객들이 영화관에서 보고 호평을 던지는 영화들이 위치. 처음에는 팬들의 결집으로 8점대를 갔던 작품들이 서서히 일반 관람객들의 평가가 쌓이면서 7점대로 수렴하는 경향이 있다.
-
-- Rating 6: 가장 많은 영화가 위치한 점수 영역대로 전체 영화의 40% 가량 포진.
+- Has a high level of credibility contributed by the high number of votes and is utilised in various analyses and predictions
 
 </br>
 
@@ -76,7 +71,7 @@ Netflix Orignial Film에 관한 정보를 담고있으며 6개 column,  584개 �
 
 </br>
 
-### 1. 데이터 불러오기
+### 1. Columns and Data
 
 ```python
 import numpy as np
