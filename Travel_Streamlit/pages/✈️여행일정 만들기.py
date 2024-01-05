@@ -15,9 +15,11 @@ from selenium.common.exceptions import NoSuchElementException
 
 client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
 
-
+st.title(' ')
 st.title("AI 여행 계획 짜기")
-st.subheader("어디로 떠나고 싶나요?")
+st.subheader("🌎 어디로 떠나고 싶나요?")
+st.title(' ')
+
 
 def generate_itinerary(country,city,nights,days,places,activities,etc):
     prompt = f'''
