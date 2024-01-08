@@ -25,6 +25,3 @@ st.title(' ')
 st.subheader("Are you too tired to plan your trip?")
 st.subheader("Or maybe you haven't decided on a destination yet?")
 st.subheader("If that's the case, you have an AI service to get recommendations for your next destination and plan an itinerary for you!🔥")
-
-
-
