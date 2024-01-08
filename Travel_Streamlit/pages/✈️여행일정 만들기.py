@@ -1,26 +1,22 @@
 import streamlit as st
 from openai import OpenAI
 import time
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from PIL import Image
 from io import BytesIO
 import requests
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException
+from bs4 import BeautifulSoup
+from googletrans import Translator
+import json
+
 
 client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
 
+# ==============================================================================================================
 st.title(' ')
 st.title("AI 여행 계획 짜기")
 st.subheader("🌎 어디로 떠나고 싶나요?")
 st.title(' ')
-
-
+# ==============================================================================================================
 def generate_itinerary(country,city,nights,days,places,activities,etc):
     prompt = f'''
 {country}의 {city}에서 {nights}박 {days}일 여행 일정표를 만들어주세요.
@@ -38,7 +34,7 @@ def generate_itinerary(country,city,nights,days,places,activities,etc):
 ---    
     '''.strip()
     return prompt
-
+# ==============================================================================================================
 def request_chat_completion(prompt):
     response = client.chat.completions.create(
         model = 'gpt-3.5-turbo',
@@ -49,7 +45,7 @@ def request_chat_completion(prompt):
         stream = True
     )
     return response
-
+# ==============================================================================================================
 def print_streaming_response(response):
     message = ''
     placeholder = st.empty()
@@ -59,49 +55,42 @@ def print_streaming_response(response):
             message += delta.content
             placeholder.markdown(message + "▌")
     placeholder.markdown(message)
-
+# ==============================================================================================================
 def information_crawling(country,city):
-    options = webdriver.ChromeOptions()
-    options.add_argument("headless")
+    url = f'https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query={country,city}'
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text,'html.parser')
+    items = soup.select('.value-_R4Lp')
+    image_urls = [img['src'] for img in soup.select('.img_list .item img')]
     
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
-    actions = ActionChains(driver)
-    url = 'https://www.naver.com/'
-    
-    driver.get(url)
-    time.sleep(1)
-    
-    driver.find_element('xpath','//*[@id="query"]').send_keys(country,city)
-    driver.find_element('xpath','//*[@id="search-btn"]').click()
-    time.sleep(1)
-    
-    try:
-        recommendation = driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[2]/div[4]/ul/li[1]/div/a/strong/p').text
-        flight = driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[2]/div[4]/ul/li[2]/div/a/strong').text
-        visa = driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[2]/div[4]/ul/li[3]/div/a/strong').text
-        currency =  driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[2]/div[4]/ul/li[4]/div/a/strong').text
-        voltage = driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[2]/div[4]/ul/li[5]/div/a/strong').text
-        
-        image_url_1 = driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div/ul/li[1]/a/div/img').get_attribute('src')
-        image_url_2 = driver.find_element('xpath','//*[@id="nxTsOv"]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div/ul/li[2]/a/div/img').get_attribute('src')
-        response_1 = requests.get(image_url_1)
-        response_2 = requests.get(image_url_2)
-        img_1 = Image.open(BytesIO(response_1.content))
-        img_2 = Image.open(BytesIO(response_2.content))
-        st.image([img_1, img_2], width=330)
-
-        st.write('추천 : ', recommendation)
-        st.write('비행시간 : ', flight)
-        st.write('비자 : ', visa)
-        st.write('환율 : ', currency)
-        st.write('전압 : ', voltage)
-    except:
-        st.write('추천 : N/A')
-        st.write('비행시간 : N/A')
-        st.write('비자 : N/A')
-        st.write('환율 : N/A')
-        st.write('전압 : N/A')
-
+    columns = st.columns(2)
+    for i,url in enumerate(image_urls):
+        response = requests.get(url)
+        if i % 2 == 0:
+            columns[0].image(Image.open(BytesIO(response.content)),width=330)
+        else:
+            columns[1].image(Image.open(BytesIO(response.content)),width=330)
+        if i == 1:
+            break
+    if not items:
+        st.write('추천 : ', None)
+        st.write('비행시간 : ', None)
+        st.write('비자 : ',  None)
+        st.write('환율 : ', None)
+        st.write('전압 : ', None)
+    for i,item in enumerate(items):
+        text = item.get_text().strip()
+        if i == 0:
+            st.write('추천 : ', text)
+        if i == 1:
+            st.write('비행시간 : ', text)
+        if i == 2:
+            st.write('비자 : ', text)
+        if i == 3:
+            st.write('환율 : ', text )
+        if i == 4:
+            st.write('전압 : ', text)
+# ==============================================================================================================
     
 
 tab_itineary,tab_weather,tab_food,tab_hotel = st.tabs(['일정','날씨','음식','호텔'])
@@ -286,89 +275,86 @@ with tab_food:
 # =========================================================================================================
 
 
-def hotel_crawling(country,city,adult,kid,sort):
-    options = webdriver.ChromeOptions()
-    options.add_argument("headless")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
-    actions = ActionChains(driver)
-    url = 'https://hotels.naver.com/'
-    driver.get(url)
-    
-    # 여행지 입력
-    driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/div/div[1]/button').click()
-    driver.find_element('xpath','//*[@id="__next"]/div/div[2]/div[1]/div/input').send_keys(city)
-    time.sleep(1)
-    driver.find_element('xpath','//*[@id="__next"]/div/div[2]/div[2]/section/ul/li[1]').click()
-    # 인원수 입력
-    driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/div/div[3]/button').click()
-    if adult == 1:
-        driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/button[1]').click()
-    elif adult > 2:
-        for i in range(abs(adult-2)):
-            driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/button[2]').click()
+def hotel_crawling(city,sort,adult,child):
+    translator = Translator()
+    city = translator.translate(city,src='ko',dest='en').text
 
-    if kid > 0:
-        for i in range(kid):
-            driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/button[2]').click()
-
-    driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/button').click()
-
-    driver.find_element('xpath','//*[@id="__next"]/div/div/div[2]/div/div/button').click()
-    
-    # 정렬
-    time.sleep(3)
-    select_element = driver.find_element(By.CLASS_NAME,'SortFilters_select__kyrE3')
-    select = Select(select_element)
-   
     if sort == '인기순':
-        select.select_by_value("rkd")
-    if sort == '평점 높은순':
-        select.select_by_value("grd")
-    if sort == '성급 높은순':
-        select.select_by_value("sta")
-    if sort == '가격 낮은순':
-        select.select_by_value("std")
-    if sort == '가격 높은순':
-        select.select_by_value("prd")
-
-    for i in range(1, 6):
-        hotel_name = None
-        hotel_rating = None
-        hotel_review = None
-        hotel_image = None
+        sortField = 'popularityKR'
+        sortDirection = 'descending'
+    elif sort == '평점 높은순':
+        sortField = 'consumerRating'
+        sortDirection = 'descending'
+    elif sort == '성급 낮은순':
+        sortField = 'rating'
+        sortDirection = 'ascending'
+    elif sort == '성급 높은순':
+        sortField = 'rating'
+        sortDirection = 'descending'
+    elif sort == '가격 낮은순':
+        sortField = 'minRate'
+        sortDirection = 'ascending'
+    elif sort == '가격 높은순':
+        sortField = 'minRate'
+        sortDirection = 'descending'
+    children = []
+    if child > 0:
+        for i in range(child):
+            children.append(12)
+    
+    url = "https://hotel-api.naver.com/graphql"
+    payload = f"{{\"query\":\"query hotelSearchByPlaceFileName($placeFileName: String!, $checkIn: String, $checkOut: String, $adultCnt: Int, $childAges: [Int], $pageSize: Int, $pageIndex: Int, $sortField: String, $sortDirection: String, $starRatings: [Int], $minPrice: Float, $maxPrice: Float, $propertyTypes: [Int], $features: [Int], $guestRatings: [Int], $chains: [Int], $includeTax: Boolean, $impPage: MultiHotelImpPage, $onlyCertStarRating: Boolean) {{\\r\\n  hotelSearchByPlaceFileName(\\r\\n    placeFileName: $placeFileName\\r\\n    checkIn: $checkIn\\r\\n    checkOut: $checkOut\\r\\n    adultCnt: $adultCnt\\r\\n    childAges: $childAges\\r\\n    pageSize: $pageSize\\r\\n    pageIndex: $pageIndex\\r\\n    sortField: $sortField\\r\\n    sortDirection: $sortDirection\\r\\n    starRatings: $starRatings\\r\\n    minPrice: $minPrice\\r\\n    maxPrice: $maxPrice\\r\\n    propertyTypes: $propertyTypes\\r\\n    features: $features\\r\\n    guestRatings: $guestRatings\\r\\n    chains: $chains\\r\\n    includeTax: $includeTax\\r\\n    impPage: $impPage\\r\\n    onlyCertStarRating: $onlyCertStarRating\\r\\n  ) {{\\r\\n    totalCount\\r\\n    hotelSummary {{\\r\\n      propertyTypes {{\\r\\n        hotelCount\\r\\n        name\\r\\n        id\\r\\n      }}\\r\\n      facilities {{\\r\\n        hotelCount\\r\\n        name\\r\\n        id\\r\\n      }}\\r\\n      starRatings {{\\r\\n        value\\r\\n        key\\r\\n      }}\\r\\n      chains {{\\r\\n        hotelCount\\r\\n        name\\r\\n        id\\r\\n      }}\\r\\n      guestRatings {{\\r\\n        value\\r\\n        key\\r\\n      }}\\r\\n      highestTotalRate\\r\\n      lowestTotalRate\\r\\n      totalAvailableResults\\r\\n      totalFilteredResults\\r\\n      postFilterLowestTotalRate\\r\\n    }}\\r\\n    destination {{\\r\\n      placeId\\r\\n      hcPlaceId\\r\\n      placeName\\r\\n      isDomestic\\r\\n      latitude\\r\\n      longitude\\r\\n      placeFileName\\r\\n      placeTypeId\\r\\n      nearByPlaces {{\\r\\n        placeId\\r\\n        hcPlaceId\\r\\n        placeName\\r\\n        isDomestic\\r\\n        latitude\\r\\n        longitude\\r\\n        placeFileName\\r\\n        placeTypeId\\r\\n      }}\\r\\n    }}\\r\\n    hotelList {{\\r\\n      hcHotelId\\r\\n      hotelFileName\\r\\n      hotelName\\r\\n      images\\r\\n      lowestRate\\r\\n      latitude\\r\\n      longitude\\r\\n      guestRating\\r\\n      starRating\\r\\n      address\\r\\n      href\\r\\n      reviewQuotes\\r\\n      isDomestic\\r\\n      rateCount\\r\\n      pkgRateCount\\r\\n      isHotelPKG\\r\\n      country\\r\\n      city\\r\\n      certification {{\\r\\n        starRatingType\\r\\n        starRatingDate\\r\\n      }}\\r\\n      taAwards {{\\r\\n        type\\r\\n        year\\r\\n      }}\\r\\n      hcReviewSummary {{\\r\\n        short\\r\\n        long\\r\\n      }}\\r\\n      topRates {{\\r\\n        hcHotelId\\r\\n        providerHotelId\\r\\n        otaCode\\r\\n        roomName\\r\\n        availableRoomCnt\\r\\n        bookUri\\r\\n        bookUriWithPromotion\\r\\n        npayType\\r\\n        isPayLater\\r\\n        isFreeCancel\\r\\n        isSecretDeal\\r\\n        inclusions\\r\\n        totalRate\\r\\n        gradeDiscount {{\\r\\n          grade\\r\\n          discountRate\\r\\n          originalPrice\\r\\n        }}\\r\\n        roomCategories\\r\\n        isTravelClub\\r\\n        travelClubSavingRate\\r\\n        isPromotion\\r\\n        promotionTotalRate\\r\\n        promotionBenefitRate\\r\\n        promotionBenefitType\\r\\n        promotionBenefitValue\\r\\n        ttpTotalGradeRates {{\\r\\n          grade\\r\\n          landingUri\\r\\n          originalRate\\r\\n          salePercent\\r\\n          saleRate\\r\\n          npaySalePercent\\r\\n          npaySaleRate\\r\\n          hasCoupon\\r\\n          couponRate\\r\\n        }}\\r\\n        ttpGradeRate {{\\r\\n          grade\\r\\n          landingUri\\r\\n          originalRate\\r\\n          salePercent\\r\\n          saleRate\\r\\n          npaySalePercent\\r\\n          npaySaleRate\\r\\n          hasCoupon\\r\\n          couponRate\\r\\n        }}\\r\\n        isKrCoupon\\r\\n        krCouponeRate\\r\\n        gradeDiscount {{\\r\\n          grade\\r\\n          discountRate\\r\\n          originalPrice\\r\\n        }}\\r\\n      }}\\r\\n      pkgRates {{\\r\\n        hcHotelId\\r\\n        providerHotelId\\r\\n        otaCode\\r\\n        roomName\\r\\n        npayType\\r\\n        availableRoomCnt\\r\\n        bookUri\\r\\n        isPayLater\\r\\n        isFreeCancel\\r\\n        inclusions\\r\\n        totalRate\\r\\n        isPromotion\\r\\n        promotionTotalRate\\r\\n        promotionBenefitRate\\r\\n        isTravelClub\\r\\n        travelClubSavingRate\\r\\n      }}\\r\\n    }}\\r\\n  }}\\r\\n}}\\r\\n\",\"variables\":{{\"placeFileName\":\"place:{city}\",\"pageIndex\":0,\"sortField\":\"{sortField}\",\"sortDirection\":\"{sortDirection}\",\"includeTax\":false,\"adultCnt\":{adult},\"childAges\":{children},\"onlyCertStarRating\":false}}}}"
+    headers = {
+  'authority': 'hotel-api.naver.com',
+  'accept': '*/*',
+  'accept-language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
+  'content-type': 'application/json',
+  'cookie': 'NNB=UQHVKDO77HUWG; ASID=1b2312aa000001864a186357000052ae; NV_WETR_LAST_ACCESS_RGN_M="MDk2MjAxMDI="; NV_WETR_LOCATION_RGN_M="MDk2MjAxMDI="; _ga=GA1.2.552912219.1697967249; _ga_8P4PY65YZ2=GS1.1.1697967248.1.1.1697967256.52.0.0; _ga_GN4BHVX9DS=GS1.1.1697967251.1.0.1697967256.55.0.0; NID_AUT=cGFL03+g6zgh+rapfq+YCDtI41xqDccCv6Z+9F07IzE/RjX1ZpOYg7xkcNLB7jQx; NID_JKL=91CnsIG7E2fXdppoO1YN1Mw2+ijM+AnL2ISDsxGux08=; nx_ssl=2; NID_SES=AAABsjnxWKFVq5pRUokeEKDGV0h6lFNRqwXvDAFASrDo4QJeT+olwaHW14rqgJHg8xk5VH0pAnNYab+u4cKDZZwZGa19CBY/8dMynKVelSMVlXBQC3jP3B1Mp8In2a4EJYJLvKoUfWmdjePteuyzIBE82CSHmL6dMcYdLHd5uX0ZctPBBL4Y43rF4GJOhM2WEOScimutd3aiYzInBXWkppDSFlkRGE4OjKtl7wVlZ6exSn4SlS5gnRAgq6Lp9IZoxa7jJZ59DcfhHS8kM4uvh2kg9uEaaZwd95LDxBQAQ7IUZj4dSmtWtcp0ZlDxd5R3/eCoOjIjwdazfdJKEdw7gU2DuAXnchfyGfwLRDWSx2IyuNo6ULS5hwvpaVqHU3+MackWXNFrWywt7kyVl2v8KOAhMMwxGEq0Rtid+V8YiZ7GhHIJVPgSEs+Y/oG9pWQAwyT2KqVqMbtNjznD7T5MR92Jm9P277ynOc8OnPfigrhOvs91cAqhqc+Iq7RkWwZOkad+gS1lfvqT/6ff7UaeCNeCVloasnL/3ujTxM+hSxki4ivdWEoTS/gytjcuWnlrzAQyDnSTB7Wki5j48PL/cHfEa7o=; page_uid=iiW8MwqVN8CssAxGLlRssssstUV-436556; NID_SES=AAABtKJh8+pi2eQKNmhgebBIiBAaMqFC0g53wWlGo3BM1hMdGIBFB628Oyon9bywWcRor69WbJyoLNinWL25pC+65M2oZi8y3JZNJgo4jQw2+BFzz/UQQiZZW+LpLWdBLZWGouJ/ZfD3bEEzIqnt4wv4cA7LWoON2d+CXQu7+hozTHOetNzsEsNfJaAfqX0Vr3PhOwiIhf26EPOLkN3SoMDqN+Xx0HO+VXgTEkOs2c52w5nUAPaelkZKHOTuKkzocH2SSIiutrbHsVhicEWIzQrhGPButV6rWOlEYa4aXBNLDUsto3AAuUCSe2BCXtF2nPnK+ABnl/3f2aIpMvCjhmMc9AfYGXh6QayY8Q2qJVZTVcfHhPTPFqjr4wHGboxmcsSU98NOW3QMcfpebVKu9dBbpNljRuOqkJid9btKqA3c4ZKSFEivN6TPAr/Amt7WFOGKXiNGDhfY97F35BGbl5zPs9sbjuTN2/lnaZ6CsHCXVp6s+SMylCMTYE2cR0X1mWZ00CWy5FtvDu61FuwKR3HXuanQYG55P5IgGoO/EIibAvuwijxyQjevIh+NT80XOnb5zW6SaXFpfBxeSK8nTUOdu2Q=',
+  'origin': 'https://hotels.naver.com',
+  'referer': 'https://hotels.naver.com/list?placeFileName=place%3ALondon&adultCnt=2&includeTax=false&sortField=popularityKR&sortDirection=descending',
+  'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-site',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    }
+    
+    response = requests.request("POST", url, headers=headers, data=payload)
+    data = json.loads(response.text)
+    for hotel in data["data"]["hotelSearchByPlaceFileName"]["hotelList"][:5]:
+        hotel_name = hotel["hotelName"]
+        review_quotes = hotel["reviewQuotes"]
+        rating = hotel['guestRating']
         
         try:
-            hotel_name = driver.find_element('xpath', f'//*[@id="__next"]/div/div/div/div[1]/div[3]/ul/li[{i}]/div[1]/div[2]/h4').text
-        except NoSuchElementException:
-            pass
-        
-        try:
-            hotel_rating = driver.find_element('xpath', f'//*[@id="__next"]/div/div/div/div[1]/div[3]/ul/li[{i}]/div[1]/div[2]/div/i[1]').text
-        except NoSuchElementException:
-            pass
-        
-        try:
-            hotel_review = driver.find_element('xpath', f'//*[@id="__next"]/div/div/div/div[1]/div[3]/ul/li[{i}]/div[1]/div[2]/i[2]').text
-        except NoSuchElementException:
-            pass
-        
-        try:
-            hotel_image = driver.find_element('xpath', f'//*[@id="__next"]/div/div/div/div[1]/div[3]/ul/li[{i}]/div[1]/div[1]/a/img').get_attribute('src')
-        except NoSuchElementException:
-            pass
-        if hotel_image is not None:
-            response = requests.get(hotel_image)
-            image = Image.open(BytesIO(response.content))
-            resized_image = image.resize((330,200))
-        
+            hotel_images = hotel['images'][0]
+            response_image = requests.get(hotel_images)
+            image = Image.open(BytesIO(response_image.content))
+            resized_image = image.resize((330, 200))
+        except (KeyError, IndexError):
+            resized_image = None
+            
+        # response_image = requests.get(hotel_images)
+        # image = Image.open(BytesIO(response_image.content))
+        # resized_image = image.resize((330,200))
+    
         cols = st.columns(2)
         with cols[0]:
-            st.image([resized_image],width=330)
+            if resized_image:
+                st.image([resized_image], width=330)
+            else:
+                st.write("이미지 없음")
+    
         with cols[1]:
-            st.write('호텔명 : ',hotel_name)
-            st.write('평점 : ',hotel_rating)
-            st.write('특징 : ',hotel_review)
-        time.sleep(1)
+            st.write('호텔명 : ', hotel_name)
+            st.write('평점 : ', rating)
+            if review_quotes:
+                for i, feature in enumerate(review_quotes, 1):
+                    st.write(f'{i}: "{feature}"')
+            else:
+                st.write('특징 : 없음')
 
 
 sorted = ['인기순','평점 높은순','성급 높은순','가격 낮은순','가격 높은순']
@@ -395,7 +381,7 @@ with tab_hotel:
                 value = 1
             )
         with col2:
-            kid = st.number_input(
+            child = st.number_input(
                 '아동',
                 min_value = 0,
                 max_value = 10,
@@ -418,6 +404,6 @@ with tab_hotel:
                 country = country
                 city = city
                 adult = adult
-                kid = kid
+                child = child
                 sort = sort
-                hotel_crawling(country,city,adult,kid,sort)
+                hotel_crawling(city,sort,adult,child)
