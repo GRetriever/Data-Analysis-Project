@@ -1,2 +1,4 @@
-# Project_1
-Multicampus_Project_1
+# Predictive Modeling for Mushroom Edibility Classification Using Decision Trees
+
+## Goal
+- 
