@@ -1,4 +1,5 @@
 # Predictive Modeling for Mushroom Edibility Classification Using Decision Trees
+*It is the brief version of my prject
 
 ## Goal
 - Analyse data to identify its characteristics
