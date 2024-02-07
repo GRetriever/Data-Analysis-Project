@@ -12,3 +12,5 @@ This repository serves as a compilation of my individual data analysis projects.
 6. [Travel Streamlit](https://github.com/GRetriever/Data-Analysis-Project/tree/main/Travel_Streamlit)
 7. [Country](https://github.com/GRetriever/Data-Analysis-Project/tree/main/Countries)
 8. [Penguin](https://github.com/GRetriever/Data-Analysis-Project/tree/main/Penguine)
+9. [Australis Weather Forecast](https://github.com/GRetriever/Data-Analysis-Project/tree/main/Australia%20Weather%20Forecast)
+10. [Cats and Dogs]()
