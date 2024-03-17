@@ -1,6 +1,6 @@
-# Data Analysis Project
+# Data Analytics Project
 
-This repository serves as a compilation of my individual data analysis projects. Each project is stored in a separate folder, allowing you to navigate to the specific project of interest for more detailed information.
+This repository serves as a compilation of my individual data analytics projects. Each project is stored in a separate folder, allowing you to navigate to the specific project of interest for more detailed information.
 
 
 # Project List
