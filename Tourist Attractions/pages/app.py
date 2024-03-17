@@ -7,6 +7,8 @@ from google.oauth2.service_account import Credentials
 from google.cloud import translate
 import pandas as pd
 import folium
+from tkinter.tix import COLUMN
+from pyparsing import empty
 
 openai_client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
 pc = Pinecone(api_key = st.secrets['PINECONE_API_KEY'])
@@ -80,7 +82,7 @@ def generate_prompt(query,items):
         item_text += f'''
 추천 결과 : {i+1}
 관광지명 : {item['관광지명']}
-대분류 : {item['대분류']}
+조소 : {item['주소']}
 중분류 : {item['중분류']}
 소분류 : {item['소분류']}
 관광지 설명 : {item['description']}
@@ -91,6 +93,7 @@ def generate_prompt(query,items):
 유저의 입력과 각 추천 결과 관광지명, 분류, 관광지 설명 등을 참고하여 추천사를 작성하세요.
 당신에 대한 소개를 먼저 하고, 친절한 말투로 작성해주세요.
 이모지를 적절히 사용해주세요.
+불릿포인트를 사용해서 관광지의 특징 키워드를 작성해주세요
 
 ---
 유저 입력 : {query}
@@ -124,14 +127,14 @@ def draw_streaming_response(response):
     placeholder.markdown(message)
 
 # =========================================================
-st.title('마 여행지좀 추천해도')
-
 area = ['부산','울산','경남','전남','광주']
 p_up = ['숨은 명소','일반 명소']
 area_location = {'부산':[35.1709666,129.0360398],'울산':[35.115225,129.042243],'경남':[35.2279728,128.681882],'전남':[34.7604121,127.6622848],'광주':[35.1599785,126.8513072]}
 
+st.title('마 여행지좀 추천해도')
+st.text('입력해라')
+
 with st.form('form'):
-    st.text('입력해라')
     col1,col2 = st.columns(2)
     with col1:
         지역 = st.selectbox(
@@ -149,11 +152,13 @@ with st.form('form'):
     )
     submit = st.form_submit_button('제출')
     st.write('좀만 기다리라 와이래 급하노')
+
 if submit:
     if not query:
         st.error('마 도랏나 여행지 특징 적으라고')
         st.stop()
-    items = recommend(query,구분,지역)
+    st.header(구분)
+    items = recommend(query,p_up[0],지역)
     prompt = generate_prompt(query,items)
     response = request_chat_completion(prompt)
     draw_streaming_response(response)
