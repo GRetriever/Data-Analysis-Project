@@ -130,35 +130,52 @@ def draw_streaming_response(response):
 area = ['부산','울산','경남','전남','광주']
 p_up = ['숨은 명소','일반 명소']
 area_location = {'부산':[35.1709666,129.0360398],'울산':[35.115225,129.042243],'경남':[35.2279728,128.681882],'전남':[34.7604121,127.6622848],'광주':[35.1599785,126.8513072]}
+age = ['10대','20대','30대','40대','50대','60대']
+gender = ['남','여']
 
-st.title('마 여행지좀 추천해도')
-st.text('입력해라')
+st.title('AI 여행지기')
+st.write('')
+st.markdown('어딜 가나 붐비는 사람들로 여행다운 여행을 하기 힘든 요즘!')
+st.markdown("'나만 알고 싶은 명소'를 찾아 헤매고 있을 당신께 5개의 지역을 중심으로 맞춤 숨은 명소를 추천해 드립니다! 신뢰 가능한 데이터와 AI 서비스를 기반으로 지금부터 숨은 명소 여행 계획을 세워보세요!")
+st.write('')
 
-with st.form('form'):
+with st.form('form1'):
     col1,col2 = st.columns(2)
     with col1:
         지역 = st.selectbox(
             '지역',
             area
         )
-    with col2:
+    with col1:
         구분 = st.selectbox(
             '구분',
             p_up
         )
+    with col1:
+        연령 = st.selectbox(
+            '연령',
+            age
+        )
+    with col1:
+        성별 = st.selectbox(
+            '성별',
+            gender
+        )
     query = st.text_input(
-        label = '원하는 관광지 특징 입력해라',
+        label = '방문하고 싶은 관광지 특징을 작성해주세요!',
         placeholder = 'ex) 사람이 적고 바다가 보이는 전망대'
     )
     submit = st.form_submit_button('제출')
-    st.write('좀만 기다리라 와이래 급하노')
 
 if submit:
     if not query:
-        st.error('마 도랏나 여행지 특징 적으라고')
+        st.error('관광지 특징을 작성해주세요!')
+        st.write(구분)
+        st.write(지역)
         st.stop()
     st.header(구분)
-    items = recommend(query,p_up[0],지역)
+    query = f'{연령} {성별}성이 좋아하는' + ' ' + query
+    items = recommend(query,구분,지역)
     prompt = generate_prompt(query,items)
     response = request_chat_completion(prompt)
     draw_streaming_response(response)
