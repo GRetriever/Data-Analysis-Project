@@ -4,7 +4,6 @@ import folium
 
 st.title('다함께 즐겨요~ 시티투어 버스')
 
-
 tab_busan,tab_ulsan,tab_gyeongnam,tab_jeonnam,tab_gwangju = st.tabs(['부산','울산','경남(창원)','전남(여수)','광주'])
 #============================================================
 

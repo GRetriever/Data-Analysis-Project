@@ -7,8 +7,8 @@ from google.oauth2.service_account import Credentials
 from google.cloud import translate
 import pandas as pd
 import folium
-from tkinter.tix import COLUMN
-from pyparsing import empty
+import base64
+
 
 openai_client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
 pc = Pinecone(api_key = st.secrets['PINECONE_API_KEY'])
@@ -16,14 +16,15 @@ index = pc.Index('touristattraction')
 
 # ========================================================
 
-with open("./data/google_secret.json") as fr:
-    google_secret = json.loads(fr.read())
+encoded_google_secret = st.secrets["GOOGLE_TRANSLATE_SECRET"]
+decoded_google_secret = base64.b64decode(encoded_google_secret).decode("utf-8")
+google_secret_json = json.loads(decoded_google_secret)
 
-credentials = Credentials.from_service_account_info(google_secret)
+credentials = Credentials.from_service_account_info(google_secret_json)
 google_translate_client = translate.TranslationServiceClient(credentials=credentials)
 
 def translation(query):
-    parent = f"projects/{google_secret['project_id']}/locations/global"
+    parent = f"projects/{google_secret_json['project_id']}/locations/global"
     response = google_translate_client.translate_text(
         request={
             "parent": parent,
@@ -136,7 +137,8 @@ gender = ['남','여']
 st.title('AI 여행지기')
 st.write('')
 st.markdown('어딜 가나 붐비는 사람들로 여행다운 여행을 하기 힘든 요즘!')
-st.markdown("'나만 알고 싶은 명소'를 찾아 헤매고 있을 당신께 5개의 지역을 중심으로 맞춤 숨은 명소를 추천해 드립니다! 신뢰 가능한 데이터와 AI 서비스를 기반으로 지금부터 숨은 명소 여행 계획을 세워보세요!")
+st.markdown("'나만 알고 싶은 명소'를 찾아 헤매고 있을 당신께 5개의 지역을 중심으로 맞춤 숨은 명소를 추천해 드립니다!")
+st.markdown("신뢰 가능한 데이터와 AI 서비스를 기반으로 지금부터 숨은 명소 여행 계획을 세워보세요!")
 st.write('')
 
 with st.form('form1'):
@@ -173,7 +175,9 @@ if submit:
         st.write(구분)
         st.write(지역)
         st.stop()
-    st.header(구분)
+    if 구분 == '숨은 명소':
+        st.balloons()
+        st.header(구분)
     query = f'{연령} {성별}성이 좋아하는' + ' ' + query
     items = recommend(query,구분,지역)
     prompt = generate_prompt(query,items)
